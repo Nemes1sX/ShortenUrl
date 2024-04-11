@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class ShortcutUrlController extends Controller
 {
-    //
+    public function store()
+    {
+
+    }
 }
