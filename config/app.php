@@ -105,6 +105,10 @@ return [
         ),
     ],
 
+    'google_api_key' => env('GOOGLE_API_KEY', ''),
+    'google_safe_browsing_api_url' => env('GOOGLE_SAFE_BROWSING_URL', ''),
+
+
     /*
     |--------------------------------------------------------------------------
     | Maintenance Mode Driver
