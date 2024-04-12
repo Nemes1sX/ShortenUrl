@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreShortenUrlRequest;
+use App\Models\ShortcutUrl;
 use App\Services\ShortcutUrlService;
 
 class ShortcutUrlController extends Controller
@@ -22,5 +23,11 @@ class ShortcutUrlController extends Controller
         ], 200);
     }
 
+    public function shortcutRedirect(string $slug)
+    {
+        $shortcutUrl = ShortcutUrl::where('slug', $slug)->firstOrFail();
+
+        return redirect($shortcutUrl->original_url);
+    }
 
 }
