@@ -9,17 +9,10 @@ const routes =[
         name: 'Home'
     },
     {
-        path: '/kates',
-        component: Home,
-        name: 'Home'
-    },
-    {
-        path: '/go/:slug*',
+        path: '/:slug*',
         name: 'Redirect',
         beforeEnter(to) {
             const pathname = to.href;
-            console.log(to);
-            return;
             if (pathname !== '/') {
                 const slug = pathname.split('/')[1]; // Get the slug from pathname
 
