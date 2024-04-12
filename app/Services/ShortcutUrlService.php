@@ -71,5 +71,4 @@ class ShortcutUrlService
        return $slug;
    }
 
-
 }

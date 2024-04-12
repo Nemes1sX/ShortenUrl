@@ -22,7 +22,7 @@ class StoreShortenUrlRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'url' => ['required', 'string', 'url']
+            'url' => ['required', 'string', 'url:http,https']
         ];
     }
 }

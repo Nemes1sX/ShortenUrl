@@ -14,8 +14,10 @@ class ShortcutUrlController extends Controller
 
         if (!$shortcutUrl) {
             return response()->json([
-                'message' => 'Shortcut URL was not generated because original URL is unsafe'
-            ], 403);
+                'errors' => [
+                    'url' => 'Shortcut URL was not generated because original URL is unsafe'
+                ]
+            ], 422);
         }
 
         return response()->json([
@@ -27,7 +29,9 @@ class ShortcutUrlController extends Controller
     {
         $shortcutUrl = ShortcutUrl::where('slug', $slug)->firstOrFail();
 
-        return redirect($shortcutUrl->original_url);
+        return response()->json([
+            'redirect' => $shortcutUrl->original_url
+            ], 200);
     }
 
 }
