@@ -29,9 +29,7 @@ class ShortcutUrlController extends Controller
     {
         $shortcutUrl = ShortcutUrl::where('slug', $slug)->firstOrFail();
 
-        return response()->json([
-            'redirect' => $shortcutUrl->original_url
-            ], 200);
+        return redirect($shortcutUrl->original_url);
     }
 
 }

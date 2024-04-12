@@ -8,3 +8,5 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::post('/generate-url', [\App\Http\Controllers\ShortcutUrlController::class, 'store']);
+Route::get('/{slug}', [\App\Http\Controllers\ShortcutUrlController::class, 'shortcutRedirect']);
+
