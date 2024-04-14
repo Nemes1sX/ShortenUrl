@@ -9,11 +9,17 @@ const routes =[
         name: 'Home'
     },
     {
+        path: '/go',
+        name: 'Go',
+        // This is just a placeholder component, it won't be rendered
+        component: { template: '<h4>Go</h4>' },
+    },
+    {
         path: '/:slug*',
         name: 'Redirect',
         // This is just a placeholder component, it won't be rendered
-        component: { template: '<div></div>' },
-    }
+        component: { template: '<div></div>' }
+    },
     ];
 
 
@@ -25,7 +31,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     const pathname = to.href;
     console.log(to.name);
-    if (pathname !== '/') {
+    if (pathname !== '/' && to.name === 'Home') {
         const slug = pathname.split('/')[1]; // Get the slug from pathname
 
         // Remove any trailing slashes from the slug
