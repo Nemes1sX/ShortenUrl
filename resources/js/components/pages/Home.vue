@@ -2,7 +2,7 @@
     <br/>
     <div class="container text-center">
         <div class="row">
-                <div class="mb-3 col-sm-8">
+                <div class="mb-3 col-sm-8 text-center">
                     <div class="card">
                         <div class="card-body">
                             <h3 class="text-center">Generate shortcut URL</h3>
