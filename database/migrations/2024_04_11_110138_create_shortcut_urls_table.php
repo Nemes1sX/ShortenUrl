@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('shortcut_urls', function (Blueprint $table) {
             $table->id();
-            $table->string('original_url');
-            $table->string('slug');
-            $table->string('shorten_url');
+            $table->string('original_url')->unique();
+            $table->string('slug')->unique();
+            $table->string('shorten_url')->unique();
             $table->timestamps();
         });
     }
