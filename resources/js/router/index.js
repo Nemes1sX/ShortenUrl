@@ -30,7 +30,6 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
     const pathname = to.href;
-    console.log(to.name);
     if (pathname !== '/' && to.name === 'Home') {
         const slug = pathname.split('/')[1]; // Get the slug from pathname
 
