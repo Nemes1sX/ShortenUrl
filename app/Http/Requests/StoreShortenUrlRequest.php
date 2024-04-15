@@ -23,7 +23,7 @@ class StoreShortenUrlRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'url' => ['required', 'string', 'url:http,https', Rule::unique('shorcut_urls')]
+            'url' => ['required', 'string', 'url:http,https', Rule::unique('shortcut_urls')]
         ];
     }
 }
